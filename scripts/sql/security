@@ -1,0 +1,20 @@
+use filmstore;
+create table USERTABLE( USERNAME varchar(20) primary key, PASSWORD varchar(256));
+
+create table GROUPTABLE(USERNAME varchar(20) primary key, GROUPNAME varchar(20));
+
+insert into GROUPTABLE(USERNAME,GROUPNAME) values ('user1', 'customer');
+insert into GROUPTABLE(USERNAME,GROUPNAME) values ('user2', 'admin');
+
+insert into USERTABLE(USERNAME,PASSWORD) values ('user1',
+'5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8');
+
+insert into USERTABLE(USERNAME,PASSWORD) values ('user2',
+'5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8');
+
+
+--join
+use filmstore;
+select usertable.USERNAME, grouptable.GROUPNAME, usertable.PASSWORD
+from usertable join grouptable on
+usertable.USERNAME = grouptable.USERNAME

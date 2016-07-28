@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+
+
+	<servers>
+		<server>
+			<id>snapshots</id>
+			<username>deployment</username>
+			<password>deployment123</password>
+		</server>
+		<server>
+			<id>releases</id>
+			<username>deployment</username>
+			<password>deployment123</password>
+		</server>
+	</servers>
+
+
+	<!--list is searched when a plugin is used and the groupId is not provided 
+		in the command line -->
+	<pluginGroups>
+		<pluginGroup>org.apache.maven.plugins</pluginGroup>
+	</pluginGroups>
+	<mirrors>
+		<mirror>
+			<!--This sends everything else to /public -->
+			<id>nexus</id>
+			<mirrorOf>*</mirrorOf>
+			<url>http://delta:8085/nexus/content/groups/public</url>
+		</mirror>
+	</mirrors>
+	<profiles>
+		<profile>
+			<id>nexus</id>
+			<!--Enable snapshots for the built in central repo to direct -->
+			<!--all requests to nexus via the mirror -->
+			<repositories>
+				<repository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+	<activeProfiles>
+		<!--make the profile active all the time -->
+		<activeProfile>nexus</activeProfile>
+	</activeProfiles>
+
+
+</settings>
+
+

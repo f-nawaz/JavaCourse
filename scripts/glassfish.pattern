@@ -1,0 +1,4 @@
+type=log4j
+pattern=[TIMESTAMP] [PROP(server)] [CLASS] [LEVEL] [PROP(someClass)] [tid: _ThreadID=PROP(ThreadID) _ThreadName=THREAD] [timeMillis: PROP(timeMilis)] [levelValue: PROP(levelValue)] MESSAGE
+name=Glassfish
+dateFormat=yyyy-MM-dd'T'HH:mm:sZ

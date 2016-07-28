@@ -1,0 +1,7 @@
+File > Project Structure > Platform Settings > SDKs > Documentation Paths
+JavaSE:		            http://docs.oracle.com/javase/8/docs/api
+JavaFX:                 https://docs.oracle.com/javase/8/javafx/api
+
+File > Project Structure > Project Settings > Libraries
+Java EE:                https://docs.oracle.com/javaee/7/api
+JUnit:                  http://junit.sourceforge.net/javadoc/

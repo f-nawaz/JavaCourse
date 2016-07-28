@@ -1,0 +1,18 @@
+package entity;
+
+public enum Genre {
+	DRAMA,
+	CRIME,
+	ADVENTURE,
+	ACTION,
+	FANTASY,
+	SCIENCE_FICTION,
+	HORROR,
+	FAMILY,
+	MUSICAL,
+	SUSPENSE,
+	COMEDY,
+	ANIMATED
+
+
+}

@@ -1,0 +1,31 @@
+
+replace jboss-logging.jar in C:\Users\User\Downloads\payara-4.1.1.161\payara41\glassfish\modules
+
+start server
+    cd C:\Users\User\Downloads\payara-4.1.1.161\payara41\bin
+    asadmin start-domain
+
+Logging
+    Paste glassfish.pattern into the plugins\logimporters folder
+    cd C:\Users\User\Downloads\olv-1.3.2\olv-1.3.2
+    olv.bat
+    file:///C:/Users/User/Downloads/payara-4.1.1.161/payara41/glassfish/domains/domain1/logs/server.log
+
+admin console
+    http://localhost:4848
+
+deploy
+    copy war to C:\Users\User\Downloads\payara-4.1.1.161\payara41\glassfish\domains\domain1\autodeploy
+
+build.gradle
+    apply plugin: 'war'
+
+    task deploy (type: Copy) {
+        from 'build/libs'
+        into 'C:/Users/User/Downloads/payara-4.1.1.161/payara41/glassfish/domains/domain1/autodeploy'
+        include '**/*.war'
+    }
+    deploy.dependsOn build
+
+stop server
+    asadmin stop-domain

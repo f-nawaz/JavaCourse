@@ -1,0 +1,20 @@
+/*change the look of the UI by customizing the .root style class. */
+.root{
+    -fx-font-size: 14.0px;
+}
+
+/*override a style in the default style sheet  */
+.label{
+    -fx-font-weight: bold;
+}
+
+/*css  properties for a component with id=textField1 */
+#textField1{
+	-fx-background-color: #333333;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+
+/* 
+http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+*/
